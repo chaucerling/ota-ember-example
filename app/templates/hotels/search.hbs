@@ -1,0 +1,72 @@
+{{nav-header title='首页' path='hotels.search'}}
+<div class="content row">
+
+  <div class="alert alert-danger alert-dismissable" id="locate_fail_msg">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>获取地理位置信息失败，请在浏览器的隐私设置中启用位置共享功能。</p>
+  </div>
+
+  <div class="search_around container " id="find_by_location">
+    <div class="row">
+      <div class="col-xs-1">
+        <img src="assets/images/location.png" width="26" height="26">
+      </div>
+      <div class="col-xs-10">
+        <span class="center">搜索我附近酒店</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="condition_box container">
+    <form>
+      <ul class="list-group">
+        {{#link-to 'hotels.city'}}
+          <li class="list-group-item row city_select">
+            <div class="col-xs-1">
+              <img src='assets/images/city.png' width="30" height="30">
+            </div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-9" >
+              <div id="city_name">{{searchOption.city_name}}-{{searchOption.city_code}}</div>
+            </div>
+            <div class="col-xs-1">
+              <img src='assets/images/enter-right-click.png' width="20" height="20">
+            </div>
+          </li>
+        {{/link-to}}
+        <li class="list-group-item row">
+          <div class="col-xs-1">
+            <img src='assets/images/calendar.png' width="30" height="30">
+          </div>
+          <div class="col-xs-1"></div>
+          <div class="col-xs-9">{{today}} (只限当天)</div>
+        </li>
+        {{#link-to 'hotels.region' (query-params city_code=searchOption.city_code)}}
+          <li class="list-group-item row region_select">
+            <div class="col-xs-1">
+              <img src='assets/images/region.png' width="30" height="30">
+            </div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-9">
+              <div id="region_name">{{show-region searchOption}}</div>
+            </div>
+            <div class="col-xs-1">
+              <img src='assets/images/enter-right-click.png' width="20" height="20">
+            </div>
+          </li>
+        {{/link-to}}
+      </ul>
+
+      <div class="tip_box row">时租房只限当天预定，且只可预定4小时</div>
+      <div class="row search_btn">
+        {{#link-to 'hotels.list' classNames="btn btn-info btn-block"}}搜索酒店{{/link-to}}
+      </div>
+    </form>
+  </div>
+
+  <div class="loading_block">
+    <img src='assets/images/loading_32.gif' width="30" height="30">
+    <p>定位中...</p>
+  </div>
+  <div class="cover_layer"></div>
+</div>

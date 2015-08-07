@@ -19,5 +19,15 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+  app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
+
+  app.import('vendor/javascripts/iscroll.js');
+  app.import('vendor/javascripts/iscroll-probe.js');
+  app.import('vendor/javascripts/pull-scroll.js');
+  app.import('vendor/javascripts/modernizr.js');
+  app.import('vendor/javascripts/select-modal.js');
+  app.import('vendor/javascripts/carousel.js');
+
   return app.toTree();
 };

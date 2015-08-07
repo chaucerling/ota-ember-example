@@ -1,0 +1,32 @@
+{{nav-header title='时租房・区域选择' path='hotels.search'}}
+<div class="row">
+  <div id="region_data">
+    <ul class="nav tab-menu nav-tabs">
+      <li class="active"><a href="#regions" data-toggle="tab">区域</a></li>
+      <li>
+        <a href="#landmarks" data-toggle="tab">商圈</a>
+      </li>
+      <li>
+        <a href="#subways" data-toggle="tab">地铁</a>
+      </li>
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+      <div id="regions" class="tab-pane active">
+      {{#each region in model.region.regions}}
+        <a class="list-group-item selectable_region" {{action "selectRegion" 'region' region.name}}>{{region.name}}</a>
+      {{/each}}
+      </div>
+      <div id="landmarks" class="tab-pane">
+      {{#each landmark in model.region.landmarks}}
+        <a class="list-group-item selectable_region" {{action "selectRegion" 'landmark' landmark.name}}>{{landmark.name}}</a>
+      {{/each}}
+      </div>
+      <div id="subways" class="tab-pane">
+      {{#each subway in model.region.subways}}
+        <a class="list-group-item selectable_region" {{action "selectRegion" 'subway' subway.name}}>{{subway.name}}</a>
+      {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

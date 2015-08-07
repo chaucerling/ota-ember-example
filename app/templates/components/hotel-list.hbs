@@ -1,0 +1,24 @@
+{{yield}}
+<div id="wrapper">
+  <div id="scroller">
+    <ul>
+      {{#each hotel in hotels}}
+        <li>
+          {{#if hotel.enable}}
+            {{#link-to 'hotels.show' hotel.id class='hotel_item'}}
+              {{hotel-item hotel=hotel}}
+            {{/link-to}}
+          {{else}}
+            <a class='hotel_item full-house' href="javascript:void(0)">
+              {{hotel-item hotel=hotel}}
+            </a>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+    <div class="pullUp" {{action 'loadHotel' on="click"}}>
+        <span class="pullUpIcon">&nbsp;</span>
+        <span class="pullUpLabel">上拉加载更多...</span>
+    </div>
+  </div>
+</div>

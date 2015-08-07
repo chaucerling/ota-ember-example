@@ -1,0 +1,218 @@
+// body[data-page="hotels-index"]{
+body{
+  // 选择弹层
+  .modal-link {
+    // padding-right: 200%;
+    color: #000000;
+  }
+  .modal-link:hover, .modal-link:focus {
+    text-decoration: none;
+    color: #000000;
+  }
+  .item-select-icon{
+    width: 8px;
+  }
+  .modal-header{
+    width: 100%;
+    border: none;
+  }
+
+  .modal-body{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 0;
+    background-color: #fff;
+    text-align: center;
+    label{
+      font-size: 18px;
+      padding-top: 10px;
+    }
+    table{
+      margin: 10px 0 0 0;
+    }
+
+    .modal-body-title {
+      .modal-finish {
+        color: red;
+        position: absolute;
+        right: 5%;
+      }
+    }
+    .select-content {
+      .select-item {
+        min-height: 60px;
+        clear: both;
+        padding: 0 8%;
+        border-bottom: 1px solid #ccc;
+        label {
+          float: left;
+          padding: 8px 0;
+        }
+        .selected-image {
+          float: right;
+          padding-top: 8px;
+          width: 27px;
+          display: none;
+        }
+      }
+      .select-item.selected-item .selected-image{
+        display: block;
+      }
+      .select-item:first-child { border-top: 1px solid #ccc; }
+    }
+  }
+
+  .modal-footer{
+    width: 100%;
+    height: 14%;
+    position: fixed;
+    bottom: 0;
+    background-color: red;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+  }
+  .select-modal-show {
+    width: 60%;
+    margin-right: 5px;
+    float: left;
+    padding-top: 8px;
+    padding-right: 18px;
+    text-align: right;
+    text-decoration: none;
+    color: #9b8f7e;
+  }
+  .select-modal-show:hover, .select-modal-show:focus {
+    text-decoration: none;
+    color: #9b8f7e;
+  }
+
+  #hotel_collection{
+    height: 100%;
+    #icon1{
+      width: 24px;
+      height: 24px;
+      background-image: asset-url("services/wifi.png");
+      background-size:24px 24px;
+    }
+    #icon2{
+      width: 24px;
+      height: 24px;
+      background-image: asset-url("services/parking.png");
+      background-size:24px 24px;
+    }
+    #icon3{
+      width: 24px;
+      height: 24px;
+      background-image: asset-url("service_icon_sale1.png");
+      background-size:24px 24px;
+    }
+    #icon4{
+      width: 24px;
+      height: 24px;
+      background-image: asset-url("service_icon_ticket1.png");
+      background-size:24px 24px;
+    }
+  }
+  section{
+    // background-color: #fff;
+    #loading_pic{
+      width: 36px;
+      height: 36px;
+      background-image: asset-url("loading_32.gif");
+      background-size:36px 36px;
+    }
+    .choose_box{
+      background-color: #faf4e9;
+      label{
+        padding-top: 7px;
+        float: left;
+      }
+      select{
+        width: 60%;
+        margin-right: 5px;
+        float: left;
+        direction: rtl;
+        border-color: transparent;
+        box-shadow: none;
+        /*border-width: 2px;*/
+        -webkit-appearance: none;
+      }
+      .down_icon{
+        margin-top: 12px;
+        margin-left: -10px;
+        width: 8px;
+      }
+      .filter_box{
+        padding:10px 0 10px 20px;
+        border-right: 1px solid #dbc398;
+        .col-xs-7{padding-left: 0;}
+        .col-xs-1{padding: 0;}
+      }
+      .brand_box{
+        padding:10px 20px 10px 20px;
+      }
+    }
+    .hotel_item{
+      display: block;
+      border-bottom: 1px dashed #dbc398;
+      padding-top: 12px;
+      padding-bottom: 5px;
+
+      [class*="col-xs-"]{
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+      }
+
+      .name_and_grade{
+        margin-bottom: 0;
+        .col-xs-3{
+          margin-bottom: 0;
+        }
+      }
+
+      .name{
+        color: #4b2d09;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-bottom: 0;
+      }
+
+      .hotel_distance{
+        color: #917d64;
+      }
+
+      .tags{
+        padding-top: 0.3em;
+        img{
+          width: 24px;
+          display: inline-block;
+        }
+      }
+
+      .price{
+        text-align: right;
+
+        span{
+          font-size: 1.6em;
+        }
+      }
+
+      &.full-house{
+        background-image: asset-url("_0038_full.png");
+        background-size: 15%;
+        background-position: 100% 0;
+        background-repeat: no-repeat;
+        opacity: 0.6;
+
+        .grade{
+          display: none;
+        }
+      }
+    }
+  }
+
+
+}

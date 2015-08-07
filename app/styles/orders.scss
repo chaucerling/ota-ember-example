@@ -1,0 +1,171 @@
+
+#new_order{
+  .room_info_box{
+    border-bottom: 1px dashed #dbc398;
+    padding: 10px;
+    background-color: #fbf6ee;
+    .row{
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .price{
+      strong{
+        font-size: 20px;
+        margin-left: -26px;
+        line-height: 20px;
+      }
+    }
+    .info-style{
+      display: table-cell;
+      vertical-align: bottom;
+      .col-xs-2{padding-left: 0;}
+      div{
+        line-height: 1.5em;
+        vertical-align: bottom;
+      }
+    }
+    p{font-size: 16px;}
+  }
+  .order_info_box{
+    padding: 10px;
+    color: #000000;
+    ul{
+      border-radius:5px;
+      border:1px solid #C7B689;
+      background-color: #EDE2D1;
+    }
+    ul li{
+      border-bottom: 1px solid #C7B689;
+    }
+    ul li:last-child {
+      border-bottom: none;
+    }
+    li{
+      padding: 10px;
+    }
+    .hint{
+      margin-top: 15px;
+      padding-bottom: 15px;
+    }
+    .btn{
+      height: 2.5em;
+      font-size: 20px;
+      letter-spacing: 5px;
+    }
+    input{
+      box-shadow: none;
+      border: none;
+    }
+    select{
+      border-color: transparent;
+      box-shadow: none;
+      border-width: 2px;
+      -webkit-appearance: none;
+    }
+    p{font-size: 16px;}
+    #amount-link-show{
+      background-origin: content-box;
+      p{background-color: #fff;}
+    }
+    .order-input{
+      background-color: #fff;
+    }
+  }
+}
+#success_order{
+  padding:10px;
+  .price{
+    font-size: 20px;
+    line-height: 20px;
+  }
+  ul{
+    border-radius:5px;
+    border:1px solid #C7B689;
+    background-color: #EDE2D1;
+    margin-top: 10px;
+  }
+  ul li:first-child{
+    padding:12px 30px 12px 10px;
+  }
+  ul li:nth-child(2){
+    border-top:1px solid #C7B689;
+    border-bottom: 1px solid #C7B689;
+    padding:12px 30px 12px 10px;
+    .row{
+      padding:5px 0 5px 0;
+    }
+  }
+  ul li:nth-child(3){
+    border-bottom: 1px solid #C7B689;
+    padding:12px 30px 12px 10px;
+    .col-xs-10{
+      line-height: 30px;
+    }
+    .pull-right{
+      margin-top: 4px;
+    }
+  }
+  ul li:nth-child(4){
+    padding:12px 30px 12px 10px;
+    // .phone,.taxi{
+    //     padding:16px 30px 16px 30px;
+    //   .col-xs-6{
+    //     line-height: 20px;
+    //   }
+    // }
+  }
+  li{
+    .price{
+      color: #ff7f32;
+    }
+    .living_nights{
+      margin-top: 20px;
+    }
+
+  }
+  a{
+    color: #000000;
+  }
+  .phone{
+    // border-right: 1px solid #C7B689;
+  }
+  .btn-danger{
+    height: 2.5em;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+  #cancel_btn{
+    color: #ffffff;
+  }
+  #cancel_order{
+    margin-top: 16px;
+    margin-bottom: 10px;
+  }
+  .time_hint{
+    padding: 10px;
+    .clock_img{
+      float: left;
+    }
+  }
+}
+
+#total-price {
+  float: right;
+  padding-right: 50px;
+}
+
+.clock-image {
+  width: 15%;
+  padding-right: 15px;
+}
+
+.order-input {
+  background-color: #e6dbc8;
+}
+
+.account { width: 20px; }
+
+.section li {
+  height: 40px;
+  overflow: hidden;
+}

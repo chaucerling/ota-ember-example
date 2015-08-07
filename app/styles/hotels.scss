@@ -1,0 +1,38 @@
+
+// 地理位置信息获取失败的提示部分
+#locate_fail_msg{
+  display: none;
+}
+
+// 加载中(定位中)的框
+.loading_block{
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  position: absolute;
+  background: rgba(20,20,20,0.7);
+  border-radius:10px;
+  display: none;
+  img{
+    margin-top: 40px;
+  }
+  p{
+    margin-top: 20px;
+    color: white;
+    letter-spacing: 3px;
+  }
+  i{
+    margin-top: 40px;
+    font-size: 2.5em;
+    color: white;
+  }
+}
+
+// 遮挡层
+.cover_layer{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+

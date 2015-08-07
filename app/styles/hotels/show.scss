@@ -1,0 +1,84 @@
+// body[data-page="hotels-show"]{
+body{
+  .hotel-detail{
+    width: 100%;
+    height: 160px;
+    .hotel-img{
+      width: 35%;
+      height: 100%;
+      float: left;
+      img{
+        width: 95%;
+        height: 95%;
+        padding: 5px 5px 0 5px;
+      }
+    }
+    .hotel-info {
+      width: 65%;
+      height: 100%;
+      float: left;
+      ul{
+        width: 100%;
+        height: 100%;
+        li{
+          padding:14px;
+          padding-right: 20px;
+          .pull-right{padding-right: 4px;}
+        }
+        li:nth-child(2){
+          border-top:1px dashed #dbc398;
+          border-bottom: 1px dashed #dbc398;
+          a{
+            color: black;
+          }
+        }
+        li:last-child{
+          a{color: #4b2d09;}
+        }
+      }
+    }
+  }
+  .detail-select-date{
+    border-top:1px dashed #dbc398;
+    border-bottom: 1px dashed #dbc398;
+    padding:14px;
+    /*margin-top: -10px;*/
+  }
+  #room_detail{
+    padding:6px;
+    li{
+      position: relative;
+      margin-top: 12px;
+      padding: 10px 6px;
+      border: 2px solid #D0B589;
+      background-color: #ffffff;
+      line-height: 35px;
+    }
+  }
+
+  marquee#scroll_title{
+    width: 80%;
+    color: black;
+  }
+  .detail-blank{height: 10px;}
+}
+
+.book-row {
+  .room-name-style {
+    margin: 0;
+    span {
+      float: right;
+      color: #ccc;
+      font-size: 14px;
+    }
+  }
+
+  .booking {
+    position: absolute;
+    right: 10px;
+  }
+
+  .price {
+    margin: 0;
+  }
+}

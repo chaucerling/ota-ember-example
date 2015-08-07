@@ -1,0 +1,61 @@
+{{nav-header title='时租房・列表' path='hotels.search'}}
+
+<section  id="hotel_collection">
+
+  <div class="row choose_box">
+    <div class="col-xs-6 filter_box">
+      <a id="sort-modal-link" class="select-modal-show" href="#sortModal" data-toggle="modal">排序</a>
+      <div class="select-down">
+        <img src='assets/images/enter-right-click.png' class="down_icon">
+      </div>
+    </div>
+
+    <div class="col-xs-6 brand_box">
+      <a id="brand-modal-link" class="select-modal-show" href="#brandModal" data-toggle="modal">品牌</a>
+      <div class="select-down">
+        <img src='assets/images/enter-right-click.png' class="down_icon">
+      </div>
+    </div>
+  </div>
+
+  {{hotel-list hotels=model searchOption=searchOption store=store}}
+</section>
+
+
+<div id="brandModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="filterModalLabel"></h3>
+  </div>
+
+  <div class="modal-body">
+    <div class="modal-body-title"><label>品牌选择</label><label class="modal-finish" {{action 'selectFilter' '#brandModal'}}>完成</label></div>
+    <div class="select-content" data-bind-id="#brand" data-bind-show="#brand-modal-link">
+        {{filter-item store=controller.store searchOption=searchOption title='全部' filter='brand' value='all' isSelected=false}}
+        {{filter-item store=controller.store searchOption=searchOption title='如家' filter='brand' value='rujia' isSelected=false}}
+        {{filter-item store=controller.store searchOption=searchOption title='莫泰' filter='brand' value='motai' isSelected=false}}
+        {{filter-item store=controller.store searchOption=searchOption title='和颐' filter='brand' value='heyi' isSelected=false}}
+        {{filter-item store=controller.store searchOption=searchOption title='云上四季' filter='brand' value='yssj' isSelected=false}}
+        {{filter-item store=controller.store searchOption=searchOption title='颐居' filter='brand' value='yiju' isSelected=false}}
+        {{filter-item store=controller.store searchOption=searchOption title='如家精选' filter='brand' value='rujia' isSelected=false}}
+    </div>
+  </div>
+</div>
+
+
+<div id="sortModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="sortModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="sortModalLabel"></h3>
+  </div>
+
+  <div class="modal-body">
+    <div class="modal-body-title"><label>排序选择</label><label class="modal-finish" {{action 'selectFilter' '#sortModal'}}>完成</label></div>
+    <div class="select-content" data-bind-id="#filter" data-bind-show="#sort-modal-link">
+      {{filter-item store=controller.store searchOption=searchOption title='推荐' filter='filter' value='' isSelected=false}}
+      {{filter-item store=controller.store searchOption=searchOption title='价格' filter='filter' value='price' isSelected=false}}
+      {{filter-item store=controller.store searchOption=searchOption title='评分' filter='filter' value='score' isSelected=false}}
+      {{filter-item store=controller.store searchOption=searchOption title='增值服务' filter='filter' value='vas' isSelected=false}}
+    </div>
+  </div>
+</div>

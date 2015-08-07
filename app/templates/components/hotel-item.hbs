@@ -1,0 +1,46 @@
+{{yield}}
+
+<div class="col-xs-3">
+  <img src="{{hotel.photo}}" height="70" width="70">
+</div>
+
+<div class="col-xs-9">
+  <div class="row name_and_grade">
+    <p class="name col-xs-9">
+      {{hotel.name}}
+    </p>
+
+    <p class="col-xs-3">
+      <span class="grade">{{hotel.sum_avg}}</span>
+    </p>
+  </div>
+
+  <div class="row">
+    {{#if hotel.distance}}
+      <span class="col-xs-6 hotel_distance">
+        距您hotel.distancekm
+      </span>
+    {{else}}
+      <span class="col-xs-6">&nbsp;</span>
+    {{/if}}
+  </div>
+
+  <div class="row">
+    <div class="col-xs-5 tags">
+      {{#each item in ["500", "400"]}}
+        {{#switch item}}
+          {{#case "500"}}
+            <img src="assets/images/wifi.png">
+          {{/case}}
+          {{#default}}
+            <img src="assets/images/wifi.png">
+          {{/default}}
+        {{/switch}}
+      {{/each}}
+    </div>
+
+    <div class="col-xs-7 price">¥ <span>{{hotel.price}}</span> 起</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>

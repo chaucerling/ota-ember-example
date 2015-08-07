@@ -1,0 +1,141 @@
+
+#wrapper {
+    position: absolute;
+    z-index: 1;
+    // top: 120px;
+    // bottom: 48px;
+    left: 0px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
+    width: 100%;
+    // background: #ccc;
+    overflow: hidden;
+    height: 88%;
+    border-top: 2px solid #ED5A77;
+}
+
+#scroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+#scroller > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+
+#scroller > li {
+    padding: 0 10px;
+    height: 80px;
+    line-height: 80px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #fff;
+    background-color: #fafafa;
+    font-size: 14px;
+}
+
+.pullDownLabel, .pullUpLabel {
+    color: #999;
+}
+
+.pullDown, .pullUp {
+    background: #fbf6ee;
+    height: 80px;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #888;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.pullDown .pullDownIcon, .pullUp .pullUpIcon {
+    display: block;
+    float: left;
+    opacity: 0.4;
+    width: 40px;
+    height: 40px;
+    background-image: asset-url("pull_to_refresh.png"); //no-repeat;
+    // background-image: asset-url("pull-icon@2x.png");
+    -webkit-background-size: 40px 80px;
+    -ms-background-size: 40px 80px;
+    background-size: 40px 80px;
+    -webkit-transition-property: -webkit-transform;
+    -ms-transition-property: -webkit-transform;
+    -webkit-transition-duration: 250ms;
+    -ms-transition-duration: 250ms
+}
+
+.pullDown .pullDownIcon {
+    -webkit-transform: rotate(0deg) translateZ(0);
+    -ms-transform: rotate(0deg) translateZ(0)
+}
+
+.pullUp .pullUpIcon {
+    -webkit-transform: rotate(-180deg) translateZ(0);
+    -ms-transform: rotate(-180deg) translateZ(0)
+}
+
+.pullDown.flip .pullDownIcon {
+    -webkit-transform: rotate(-180deg) translateZ(0);
+    -ms-transform: rotate(-180deg) translateZ(0)
+}
+
+.pullUp.flip .pullUpIcon {
+    -webkit-transform: rotate(0deg) translateZ(0);
+    -ms-transform: rotate(0deg) translateZ(0)
+}
+
+.loading .pullDownIcon, .loading .pullUpIcon {
+    // background-position: 0 100%;
+    background-position: 0px 40px;
+    -webkit-transform: rotate(0deg) translateZ(0);
+    -ms-transform: rotate(0deg) translateZ(0);
+    -webkit-transition-duration: 0ms;
+    -ms-transition-duration: 0ms;
+    -webkit-animation-name: loading;
+    -ms-animation-name: loading;
+    -webkit-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -ms-animation-timing-function: linear
+}
+
+@-webkit-keyframes loading {
+    from {
+        -webkit-transform: rotate(0deg) translateZ(0)
+    }
+    to {
+        -webkit-transform: rotate(360deg) translateZ(0)
+    }
+}
+
+@-ms-keyframes loading {
+    from {
+        -ms-transform: rotate(0deg) translateZ(0)
+    }
+    to {
+        -ms-transform: rotate(360deg) translateZ(0)
+    }
+}

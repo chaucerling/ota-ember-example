@@ -1,0 +1,173 @@
+// body[data-page="hotels-search"]{
+body{
+  .content{
+    color: #4b2d09;
+    padding:10px;
+    .search_around{
+      margin-top: 10px;
+      border: 1px solid #D0B589;
+      padding:16px;
+      width: 100%;
+      background-color: #ffffff;
+      -moz-border-radius: 5px;      /* Gecko browsers */
+      -webkit-border-radius: 5px;   /* Webkit browsers */
+      border-radius:5px;            /* W3C syntax */
+      .col-xs-1{padding-left: 8px;}
+      .center{
+        padding-top: 4px;
+        font-size: 16px;
+        letter-spacing: 5px;
+      }
+    }
+    .condition_box{
+      width: 100%;
+      margin-top: 30px;
+      .list-group-item{
+        border: 1px solid #D0B589;
+        padding:16px 8px 16px 8px;
+        background-color: #ffffff;
+        .col-xs-9{
+          line-height: 30px;
+        }
+        div{
+          padding: 0px;
+        }
+      }
+    }
+    .tip_box{
+      margin-top: -14px;
+    }
+    .search_btn{
+      margin-top: 50px;
+      button{
+        height:50px;
+        font-size: 18px;
+        letter-spacing: 5px;
+      }
+    }
+  }
+
+  .select_city_box{
+    .title{
+      color: #a09385;
+    }
+    #scrollTop{
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+      display: none;
+      background-image: asset-url("scrollTop.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 32px;
+      height: 32px;
+    }
+    padding-left:16px;
+    .current_city{
+      margin-top: 10px;
+    }
+    .current_city, .other_cities, .hot_city, [id*="letter_"]{
+      margin-bottom: 2em;
+      #cur_city{
+        color: #4b2d09;
+        font-size: 1.2em;
+      }
+      .city_name{
+        font-size: 1.2em;
+      }
+
+      a {
+        display: inline-block;
+        width: 18%;
+        text-align: center;
+        padding: 4px 12px;
+        margin-bottom: 8px;
+        margin-right: 1%;
+        color: #4b2d09;
+        font-size: 1.2em;
+        background-color: #f0e6d7;
+        white-space: nowrap;
+
+        &:hover, &:active{
+          background-color: #fff;
+          outline: 1px solid #dbc398;
+          text-decoration: none;
+        }
+      }
+    }
+
+    [id*="letter_"]{
+      p{
+        width: 18%;
+        text-align: center;
+        padding: 4px 12px;
+        margin-bottom: 8px;
+        font-size: 1.2em;
+        background-color: #f0e6d7;
+      }
+      .selectable_city{
+        width: auto;
+        background-color: transparent;
+
+      }
+    }
+  }
+
+  #region_data{
+    ul.nav{
+      border-bottom: 3px solid #fa6482;
+
+      li{
+        width: 33%;
+        text-align: center;
+
+        a{
+          color: #4b2d09;
+          font-size: 1.2em;
+
+          &:hover{
+            background-color: transparent;
+            border: none;
+          }
+        }
+
+        &.active{
+
+          a{
+            background-color: transparent;
+            border: none;
+            color: #fa6482;
+
+            &:after{
+              content: '';
+              display: block;
+              width: 0;
+              height: 0;
+              border-left: 15px solid transparent;
+              border-right: 15px solid transparent;
+              border-bottom: 8px solid #f66783;
+              position: absolute;
+              left: 40%;
+              right: 40%;
+              bottom: -5%;
+            }
+          }
+        }
+
+      }
+    }
+
+    .tab-content{
+      margin-top: 1em;
+
+      .tab-pane{
+        border: none;
+
+        .selectable_region{
+          border: none;
+          color: #4b2d09;
+        }
+      }
+    }
+  }
+}

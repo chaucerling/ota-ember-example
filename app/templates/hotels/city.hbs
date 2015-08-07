@@ -1,0 +1,18 @@
+{{nav-header title='时租房・城市列表' path='hotels.search'}}
+<section class="select_city_box row">
+  <a href="#" id="scrollTop"></a>
+  <div class="current_city">
+    <p class="title">当前城市</p>
+    <p id="cur_city"></p>
+  </div>
+  <div>
+    <p class="title">热门城市</p>
+    <ul class="hot_city" >
+      <li class="tab-pane">
+        {{#each city in model}}
+          <a  class="selectable_city" {{action "select" city}}>{{city.name}}</a>
+        {{/each}}
+      </li>
+    </ul>
+  </div>
+</section>

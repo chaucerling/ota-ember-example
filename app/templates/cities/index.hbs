@@ -1,0 +1,10 @@
+<h1>city Index</h1>
+<ul>
+  {{#each city in model}}
+    <li>
+      {{#link-to 'cities.show' city}}
+        {{city.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>

@@ -1,0 +1,68 @@
+{{outlet}}
+
+{{nav-header title='时租房・酒店详情' path='hotels.list'}}
+
+<div class="row">
+
+  <div class="hotel-detail">
+    <div class="hotel-img">
+      <img src="{{hotel-img model.hotel.photos}}">
+    </div>
+    <div class="hotel-info">
+      <ul>
+        <li id="hotel_detail">
+          <a href="#">
+            <div class="row">
+              <div class="col-xs-11">
+                icon
+              </div>
+              <div class="pull-right">
+                <img src="assets/images/enter-right-click.png" height="12" width="12">
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <div class="row">
+              <div class="col-xs-10">
+                {{hotel-address model.hotel.address}}
+              </div>
+              <div class="pull-right">
+                <img src="assets/images/enter-right-click.png" height="12" width="12">
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="tel:{{model.hotel.tel}}">
+            <div class="row">
+              <div class="col-xs-10">
+                {{model.hotel.tel}}
+              </div>
+              <div class="pull-right">
+                <img src="assets/images/enter-right-click.png" height="12" width="12">
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="detail-select-date">
+      入住：{{date-today ""}} 8:00-18:00
+    </div>
+</div>
+
+<div class="row">
+  <ul id="room_detail">
+    {{#each item in model.room.room_types}}
+      {{room-item room=item}}
+    {{/each}}
+  </ul>
+</div>
