@@ -1,0 +1,40 @@
+{{nav-header title='时租房・酒店详情' path='hotels.show' id=model.id}}
+<div class="hotel_detail">
+  <div class="row">
+    <h4>酒店地址</h4>
+    <p class="address_box">{{hotel-short-address model.address}}</p>
+    {{gaode-map lng=model.lng lat=model.lat containerClass='detail_page'}}
+  </div>
+
+  <div class="row">
+    <h4>酒店说明</h4>
+    <p>{{model.desp}}</p>
+  </div>
+
+  <div class="row">
+    <h4>酒店点评</h4>
+    {{#if model.comments.length}}
+      {{#each model.comments as |comment|}}
+        <div class="comment_box container">
+          <div class="row comment_color">
+            <div class="col-xs-4">综合评分：{{comment.grade}}</div>
+            <div class="col-xs-8">评论人：{{comment.user}}</div>
+          </div>
+          <div class="comment_content">
+            <div class="row">
+             <p class="comment_color">点评：</p>
+             <p>{{comment.content}}</p>
+            </div>
+            <div class="row">
+              <p class="comment_color">回复：{{comment.reply}}</p>
+              <p></p>
+            </div>
+            <p class="pull-right">{{comment.created_at}}</p>
+          </div>
+        </div>
+      {{/each}}
+    {{else}}
+      <p>该酒店暂时没有评论</p>
+    {{/if}}
+  </div>
+</div>

@@ -15,11 +15,8 @@ Router.map(function() {
     this.route('region');
     this.route('list');
     this.route('show', {path: ':hotel_id'});
-    this.resource('filter', function () {
-      this.route('date');
-      this.route('brand');
-      this.route('region');
-    });
+    this.route('detail', {path: ':hotel_id/detail'});
+    this.route('map', {path: ':hotel_id/map'});
   });
   // this.resource('cities', function() {
   //   this.route('show', { path: ':city_id' });

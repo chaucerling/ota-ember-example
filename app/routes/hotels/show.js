@@ -6,11 +6,5 @@ export default Ember.Route.extend({
       hotel: this.store.find('hotel-detail', params.hotel_id),
       room: this.store.find('room-type', params.hotel_id)
     });
-  },
-  // afterModel: function(){
-  //   var hotel = this.modelFor('hotels.show').hotel;
-  //   // if (typeof(hotel.get('desp')) === 'undefined'){
-  //     hotel.reload();
-  //   // }
-  // },
+  }
 });

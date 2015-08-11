@@ -1,9 +1,7 @@
 {{outlet}}
-
 {{nav-header title='时租房・酒店详情' path='hotels.list'}}
 
 <div class="row">
-
   <div class="hotel-detail">
     <div class="hotel-img">
       <img src="{{hotel-img model.hotel.photos}}">
@@ -11,29 +9,29 @@
     <div class="hotel-info">
       <ul>
         <li id="hotel_detail">
-          <a href="#">
+          {{#link-to 'hotels.detail' model.hotel.id}}
             <div class="row">
               <div class="col-xs-11">
-                icon
+                {{service-icons service=(service-array model.hotel.service)}}
               </div>
               <div class="pull-right">
                 <img src="assets/images/enter-right-click.png" height="12" width="12">
               </div>
             </div>
-          </a>
+          {{/link-to}}
         </li>
 
         <li>
-          <a href="#">
+          {{#link-to 'hotels.map' model.hotel.id}}
             <div class="row">
               <div class="col-xs-10">
-                {{hotel-address model.hotel.address}}
+                {{hotel-8-word-address model.hotel.address}}
               </div>
               <div class="pull-right">
                 <img src="assets/images/enter-right-click.png" height="12" width="12">
               </div>
             </div>
-          </a>
+          {{/link-to}}
         </li>
 
         <li>

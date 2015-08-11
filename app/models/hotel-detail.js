@@ -16,6 +16,6 @@ export default DS.Model.extend({
   gaode_lat: DS.attr('number'),
   gaode_lng: DS.attr('number'),
   region_name: DS.attr('string'),
-  service: DS.attr('string'),
+  service: DS.attr(),
   brand: DS.attr('string'),
 });

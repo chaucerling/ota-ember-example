@@ -20,7 +20,10 @@ module.exports = function(environment) {
   };
 
   ENV.contentSecurityPolicy = {
-    'connect-src': "'self' http://localhost:3000", 
+    'connect-src': "'self' http://localhost:3000 http://*.amap.com",
+    'script-src': "'self' 'unsafe-eval' http://*.amap.com",
+    'style-src': "'self'  'unsafe-inline' http://*.amap.com",
+    'img-src': "'self' http://*.amap.com data:"
   }
 
   if (environment === 'development') {

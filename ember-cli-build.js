@@ -25,9 +25,11 @@ module.exports = function(defaults) {
   app.import('vendor/javascripts/iscroll.js');
   app.import('vendor/javascripts/iscroll-probe.js');
   app.import('vendor/javascripts/pull-scroll.js');
-  app.import('vendor/javascripts/modernizr.js');
+  // app.import('vendor/javascripts/modernizr.js');
   app.import('vendor/javascripts/select-modal.js');
-  app.import('vendor/javascripts/carousel.js');
+
+  // app.import('vendor/javascripts/carousel.js');
+  app.import('vendor/javascripts/amap.js');
 
   return app.toTree();
 };

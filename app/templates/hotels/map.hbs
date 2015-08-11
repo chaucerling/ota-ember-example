@@ -1,0 +1,6 @@
+{{nav-header title='时租房・酒店地图' path="hotels.show" id=model.id}}
+
+<div class="row">
+  <p class="hotel_address">{{hotel-short-address model.address}}</p>
+  {{gaode-map lng=model.lng lat=model.lat containerClass='map_page'}}
+</div>

@@ -1,7 +1,15 @@
 {{yield}}
 <div class="row">
   <div class="header">
-    {{#link-to path}}<img src="assets/images/return-click.png" width="40" height="40">{{/link-to}}
+    {{#if id}}
+      {{#link-to path id}}
+        <img src="assets/images/return-click.png" width="40" height="40">
+      {{/link-to}}
+    {{else}}
+      {{#link-to path}}
+        <img src="assets/images/return-click.png" width="40" height="40">
+      {{/link-to}}
+    {{/if}}
     <span class="center">{{title}}</span>
   </div>
 </div>

@@ -1,5 +1,5 @@
-body[data-page="hotels-get_map"]{
-  #map_container{
+body {
+  #map_container.map_page{
     height:600px;
   }
   .hotel_address{
