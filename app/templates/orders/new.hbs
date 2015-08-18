@@ -1,0 +1,45 @@
+{{nav-header title='时租房・提交订单' path='hotels.show' id=model.hotel.id}}
+{{errorMessage}}
+<div id="new_order" class="row select-modal-module">
+  <div class="room_info_box">
+    <div class="row">
+      <div class="col-xs-4">门&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;店：</div>
+      <div class="col-xs-8">{{model.hotel.name}}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-4">房&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</div>
+      <div class="col-xs-8">{{room.room_name}}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-4">到店时间：</div>
+      <div class="col-xs-6">{{date-today ""}}(住4小时)</div>
+      <div class="col-xs-2 price">
+        <strong>￥{{room.price}}</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="order_info_box">
+    <p class="headline">预订信息</p>
+    {{partial "orders/form"}}
+  </div>
+
+  {{#select-modal elementId="amountModal" title="房间数量" bindValue=model.order.amount as |selectItem|}}
+    {{#each roomAmounts as |num|}}
+      {{#select-modal-item value=num action=selectItem}}
+        {{num}}
+      {{/select-modal-item}}
+    {{/each}}
+  {{/select-modal}}
+
+
+  {{#select-modal elementId="timeModal" title="到店时间" bindValue=model.order.start_time as |selectItem|}}
+    {{#each startTimes as |num|}}
+      {{#select-modal-item value=num action=selectItem}}
+        {{num}}点
+      {{/select-modal-item}}
+    {{/each}}
+  {{/select-modal}}
+</div>

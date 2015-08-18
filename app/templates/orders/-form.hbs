@@ -1,0 +1,70 @@
+<form {{action 'submit' on='submit'}}>
+  <ul class="section">
+    <li>
+      <a id="amount-modal-link" class="modal-link" href="#amountModal" data-toggle="modal">
+        <div class="row">
+          <div class="col-xs-4">
+            房间数:
+          </div>
+          <div class="col-xs-6 price" id="amount-link-show">
+            {{input value=model.order.amount class='order-input' type='text'}}
+          </div>
+          <div class="col-xs-2 alert-right">
+            <img src="assets/images/enter-right-click.png" class="item-select-icon"/>
+          </div>
+      </div>
+      </a>
+    </li>
+
+    <li>
+      <div class="row">
+        <div class="col-xs-4">
+          姓名:
+        </div>
+        <div class="col-xs-6">
+          {{input value=session.secure.user.name class='order-input' type='text'}}
+        </div>
+        <div class="col-xs-2 alert-right">
+          {{!-- <%= link_to contacts_path(@order_option.merge(scope: 'hours')) do %> --}}
+            <img src="assets/images/avatar.png" class="account"/>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="row">
+        <div class="col-xs-4">
+          电话:
+        </div>
+        <div class="col-xs-6">
+          {{input value=session.secure.user.phone class='order-input' type='text'}}
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <a id="time-modal-link" class="modal-link" href="#timeModal" data-toggle="modal">
+        <div class="row">
+          <div class="col-xs-4">
+            到店时间:
+          </div>
+          <div class="col-xs-5" id="time-modal-show">
+            {{#if model.order.start_time}}
+              {{model.order.start_time}}点
+            {{else}}
+              请选择到店时间
+            {{/if}}
+          </div>
+          <div class="col-xs-3 alert-right">
+            <img src="assets/images/enter-right-click.png" class="item-select-icon"/>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <p class="headline hint">
+    <img src="assets/images/clock.png" class="clock-image" width="50" height="40"/>
+    该订单最晚保留时间为16:00
+  </p>
+  <button type="submit" class="btn btn-info btn-block">提交订单</button>
+</form>

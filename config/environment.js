@@ -23,7 +23,7 @@ module.exports = function(environment) {
     'connect-src': "'self' http://localhost:3000 http://*.amap.com",
     'script-src': "'self' 'unsafe-eval' http://*.amap.com",
     'style-src': "'self'  'unsafe-inline' http://*.amap.com",
-    'img-src': "'self' http://*.amap.com data:"
+    'img-src': "'self' http://image-homeinn.b0.upaiyun.com http://*.amap.com data:"
   }
 
   if (environment === 'development') {

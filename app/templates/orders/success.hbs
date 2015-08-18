@@ -1,0 +1,125 @@
+{{nav-header title='时租房・预订成功' path='hotels.search'}}
+
+<div id="success_order" class="row">
+
+  <ul>
+    <li>
+      <div class="row">
+        <div class="col-xs-10">
+          <h4>{{model.hotel.name}}</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          房型：{{model.room.room_name}}({{model.amount}}间)
+        </div>
+        <div class="col-xs-3 price">
+          ￥{{model.total_price}}
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="row">
+        <div class="col-xs-4">
+          订单编号:
+        </div>
+        <div class="col-xs-6">
+          {{model.id}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          入住人:
+        </div>
+        <div class="col-xs-6">
+          {{model.contact_name}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          手机号码:
+        </div>
+        <div class="col-xs-4">
+          {{model.contact_phone}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          入住日期:
+        </div>
+        <div class="col-xs-8">
+          {{date-today ""}}(共4个小时)
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          到店时间
+        </div>
+        <div class="col-xs-6">
+          {{model.start_time}}:00
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          房间总价:
+        </div>
+        <div class="col-xs-6">
+          {{model.total_price}}元
+        </div>
+      </div>
+    </li>
+    <li>
+      <a href="<%= get_map_hotels_path(id: @order.hotel_code, scope: 'hours', back_url: root_path(scope: 'hours')) %>">
+        <div class="row">
+          <div class="col-xs-1">
+            <img src="assets/images/region.png" height="26" width="26">
+          </div>
+          <div class="col-xs-10">
+           {{hotel-8-word-address model.hotel.address}}
+          </div>
+          <div class="pull-right">
+            <img src="assets/images/enter-right-click.png" height="12" width="12">
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="tel:{{model.contact_phone}}">
+        <div class="row">
+          <div class="col-xs-1">
+            <img src="assets/images/phone.png" height="26" width="26">
+          </div>
+          <div class="col-xs-10">
+            电话
+          </div>
+          <div class="pull-right">
+            <img src="assets/images/enter-right-click.png" height="12" width="12">
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <div class="time_hint row">
+    <div class="clock_img">
+      <img src="assets/images/clock.png" class="clock-image" height="50" width="40">
+    </div>
+    <div class="font_box">
+      <p>该订单最晚保留时间为16:00</p>
+      <p>时租房开始时间为入住时间开始计算</p>
+    </div>
+  </div>
+  <button type="button" class="btn btn-danger btn-block" id="cancel_order" data-toggle="modal" data-target="#cancel_order_modal" >取消订单</button>
+  <div class="modal fade " id="cancel_order_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          你确定取消该订单吗？
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <a class="btn btn-info pull-right" id="cancel_btn" {{action "delete" model}}>确定</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

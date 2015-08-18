@@ -21,9 +21,18 @@ module.exports = function(defaults) {
 
   app.import('bower_components/bootstrap/dist/css/bootstrap.css');
   app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
+  app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2', {
+    destDir: '/fonts'
+  });
+  app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', {
+    destDir: '/fonts'
+  });
+  app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf', {
+    destDir: '/fonts'
+  });
 
   app.import('vendor/javascripts/iscroll.js');
-  app.import('vendor/javascripts/iscroll-probe.js');
+  // app.import('vendor/javascripts/iscroll-probe.js');
   app.import('vendor/javascripts/pull-scroll.js');
   // app.import('vendor/javascripts/modernizr.js');
   app.import('vendor/javascripts/select-modal.js');

@@ -15,19 +15,19 @@ export default Ember.Controller.extend({
     landmark: '',
   },
   brands: [
-    {title: "全部", value: "all"},
-    {title: "如家", value: "rujia"},
-    {title: "莫泰", value: "motai"},
-    {title: "和颐", value: "heyi"},
-    {title: "云上四季", value: "yssj"},
-    {title: "颐居", value: "yiju"},
-    {title: "如家精选", value: "jingxuan"}
+    {text: "全部", value: "all"},
+    {text: "如家", value: "rujia"},
+    {text: "莫泰", value: "motai"},
+    {text: "和颐", value: "heyi"},
+    {text: "云上四季", value: "yssj"},
+    {text: "颐居", value: "yiju"},
+    {text: "如家精选", value: "jingxuan"}
   ],
   sorts: [
-    {title: "推荐", value: "all"},
-    {title: "价格", value: "price"},
-    {title: "评分", value: "score"},
-    {title: "增值服务", value: "vas"}
+    {text: "推荐", value: ""},
+    {text: "价格", value: "price"},
+    {text: "评分", value: "score"},
+    {text: "增值服务", value: "vas"}
   ],
   today: new Date().toJSON().substring(0,10),
 });

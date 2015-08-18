@@ -4,79 +4,62 @@
 
   <div class="row choose_box">
     <div class="col-xs-6 filter_box">
-      <a id="sort-modal-link" class="select-modal-show" href="#sortModal" data-toggle="modal">排序</a>
+      <a id="sort-modal-link" class="select-modal-show" href="#sortModal" data-toggle="modal">
+        {{#if searchOption.filter}}
+          {{sortText}}
+        {{else}}
+          排序
+        {{/if}}
+      </a>
       <div class="select-down">
         <img src='assets/images/enter-right-click.png' class="down_icon">
       </div>
     </div>
 
     <div class="col-xs-6 brand_box">
-      <a id="brand-modal-link" class="select-modal-show" href="#brandModal" data-toggle="modal">品牌</a>
+      <a id="brand-modal-link" class="select-modal-show" href="#brandModal" data-toggle="modal">
+        {{#if searchOption.brand}}
+          {{brandText}}
+        {{else}}
+          品牌
+        {{/if}}
+      </a>
       <div class="select-down">
         <img src='assets/images/enter-right-click.png' class="down_icon">
       </div>
     </div>
   </div>
-  <div id="wrapper">
-    <div id="scroller">
-      <ul>
-        {{#each hotel in model}}
-          <li>
-            {{#if hotel.enable}}
-              {{#link-to 'hotels.show' hotel.id class='hotel_item'}}
-                {{hotel-item hotel=hotel}}
-              {{/link-to}}
-            {{else}}
-              <a class='hotel_item full-house' href="javascript:void(0)">
-                {{hotel-item hotel=hotel}}
-              </a>
-            {{/if}}
-          </li>
-        {{/each}}
-      </ul>
-      <div class="pullUp" {{action 'loadHotel' on="click"}}>
-        <span class="pullUpIcon">&nbsp;</span>
-        <span class="pullUpLabel">上拉加载更多...</span>
-      </div>
-    </div>
-  </div>
+  {{#pull-scroll-wrapper paging="loadPaging" model=model}}
+    {{#each model as |hotel|}}
+      <li>
+        {{#if hotel.enable}}
+          {{#link-to 'hotels.show' hotel.id class='hotel_item'}}
+            {{hotel-item hotel=hotel}}
+          {{/link-to}}
+        {{else}}
+          <a class='hotel_item full-house' href="javascript:void(0)">
+            {{hotel-item hotel=hotel}}
+          </a>
+        {{/if}}
+      </li>
+    {{/each}}
+  {{/pull-scroll-wrapper}}
 </section>
 
+{{#select-modal elementId="sortModal" title="排序选择" bindText=sortText
+  bindValue=searchOption.filter apply="loadOption" as |selectItem|}}
+  {{#each sorts as |sort|}}
+    {{#select-modal-item text=sort.text value=sort.value action=selectItem}}
+      {{sort.text}}
+    {{/select-modal-item}}
+  {{/each}}
+{{/select-modal}}
 
-<div id="brandModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="filterModalLabel"></h3>
-  </div>
-
-  <div class="modal-body">
-    <div class="modal-body-title">
-      <label>排序选择</label>
-      <label class="modal-finish" {{action 'selectFilter' '#brandModal'}}>完成</label>
-    </div>
-    <div class="select-content" data-bind-id="#filter" data-bind-show="#sort-modal-link">
-      {{#each brand in brands}}
-        {{filter-item searchOption=searchOption title=brand.title filter='brand' value=brand.value}}
-      {{/each}}
-    </div>
-  </div>
-</div>
-
-
-<div id="sortModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="sortModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="sortModalLabel"></h3>
-  </div>
-  <div class="modal-body">
-    <div class="modal-body-title">
-      <label>排序选择</label>
-      <label class="modal-finish" {{action 'selectFilter' '#sortModal'}}>完成</label>
-    </div>
-    <div class="select-content" data-bind-id="#filter" data-bind-show="#sort-modal-link">
-      {{#each sort in sorts}}
-        {{filter-item searchOption=searchOption title=sort.title filter='filter' value=sort.value}}
-      {{/each}}
-    </div>
-  </div>
-</div>
+{{#select-modal elementId="brandModal" title="品牌选择" bindText=brandText
+  bindValue=searchOption.brand apply="loadOption" as |selectItem|}}
+  {{#each brands as |brand|}}
+    {{#select-modal-item text=brand.text value=brand.value action=selectItem}}
+      {{brand.text}}
+    {{/select-modal-item}}
+  {{/each}}
+{{/select-modal}}

@@ -12,7 +12,7 @@
           {{#link-to 'hotels.detail' model.hotel.id}}
             <div class="row">
               <div class="col-xs-11">
-                {{service-icons service=(service-array model.hotel.service)}}
+                {{service-icons serviceStr=model.hotel.service}}
               </div>
               <div class="pull-right">
                 <img src="assets/images/enter-right-click.png" height="12" width="12">
@@ -53,14 +53,14 @@
 
 <div class="row">
     <div class="detail-select-date">
-      入住：{{date-today ""}} 8:00-18:00
+      入住：{{date-today ""}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8:00-18:00
     </div>
 </div>
 
 <div class="row">
   <ul id="room_detail">
-    {{#each item in model.room.room_types}}
-      {{room-item room=item}}
+    {{#each model.room.room_types as |item|}}
+      {{room-item room=item hotel_code=model.hotel.id}}
     {{/each}}
   </ul>
 </div>

@@ -9,7 +9,9 @@
     </div>
     <div class="booking">
       {{#if room.amount}}
-        <button class="btn btn-info">预订</button>
+        {{#link-to 'orders.new' (query-params hotel_code=hotel_code room_type=room.room_type)}}
+          <button class="btn btn-info">预订</button>
+        {{/link-to}}
       {{else}}
         <button class="btn btn-info" disabled="disabled">满房</button>
       {{/if}}
